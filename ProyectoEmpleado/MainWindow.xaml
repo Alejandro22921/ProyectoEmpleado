@@ -1,7 +1,7 @@
 ﻿<Window x:Class="ProyectoEmpleado.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="350" Width="525" Icon="sources/IVINlogo.png">
     <Grid Loaded="Grid_Loaded">
         <Menu HorizontalAlignment="Left" Height="22" VerticalAlignment="Top" Width="517">
             <MenuItem Header="Archivo" Click="MenuItem_Click_4">
@@ -14,6 +14,7 @@
                 <MenuItem Header="Consulta" Click="MenuConsulta_Click" Name="MenuConsulta"/>
             </MenuItem>
         </Menu>
+        <Image HorizontalAlignment="Left" Height="282" Margin="128,37,0,0" VerticalAlignment="Top" Width="389" Source="sources/IVINlogo.png" StretchDirection="DownOnly"/>
 
     </Grid>
 </Window>
