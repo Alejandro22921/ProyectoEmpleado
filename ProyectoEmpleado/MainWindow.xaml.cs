@@ -57,5 +57,10 @@ namespace ProyectoEmpleado
         private void Grid_Loaded(object sender, RoutedEventArgs e)
         {
         }
+
+        private void MenuItem_Click_4(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

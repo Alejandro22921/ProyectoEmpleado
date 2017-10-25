@@ -56,6 +56,9 @@
     <Compile Include="wAltaEmpleado.xaml.cs">
       <DependentUpon>wAltaEmpleado.xaml</DependentUpon>
     </Compile>
+    <Compile Include="wConsultaEmpleado.xaml.cs">
+      <DependentUpon>wConsultaEmpleado.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -75,6 +78,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="wAltaEmpleado.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="wConsultaEmpleado.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

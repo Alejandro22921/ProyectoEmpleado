@@ -4,7 +4,7 @@
         Title="MainWindow" Height="350" Width="525">
     <Grid Loaded="Grid_Loaded">
         <Menu HorizontalAlignment="Left" Height="22" VerticalAlignment="Top" Width="517">
-            <MenuItem Header="Archivo">
+            <MenuItem Header="Archivo" Click="MenuItem_Click_4">
                 <MenuItem Header="Salir" Click="MenuItem_Click"/>
             </MenuItem>
             <MenuItem Header="Empleado">
