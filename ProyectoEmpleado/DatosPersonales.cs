@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ProyectoEmpleado
 {
-    class DatosPersonales
+    public class DatosPersonales
     {
         protected string nombre;
         public string Nombre

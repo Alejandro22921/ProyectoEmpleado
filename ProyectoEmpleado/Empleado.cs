@@ -4,9 +4,9 @@ using System.Linq;
 
 namespace ProyectoEmpleado
 {
-    abstract class Empleado
+    public abstract class Empleado
     {
-        protected DatosPersonales datos;
+        private DatosPersonales datos;
         public DatosPersonales Datos
         {
             get { return datos; }

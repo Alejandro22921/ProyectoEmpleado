@@ -47,10 +47,10 @@ namespace ProyectoEmpleado
                 double salarioXHoraExtra = Convert.ToDouble(txtSalarioExtra_Sindicalizado.Text);
                 empleado = new EmpleadoSindicalizado(datos, salarioBase, horasExtras, salarioXHoraExtra);
             }
-                  
+
 
             if (empleado != null)
-                lista.Add(empleado);
+                MainWindow.lista.Add(empleado);
         }
 
         private void rbtn1_Click(object sender, RoutedEventArgs e)
