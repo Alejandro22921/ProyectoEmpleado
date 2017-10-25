@@ -8,9 +8,10 @@
                 <MenuItem Header="Salir" Click="MenuItem_Click"/>
             </MenuItem>
             <MenuItem Header="Empleado">
-                <MenuItem Header="Agregar" Click="MenuItem_Click_1"/>
-                <MenuItem Header="Eliminar" Click="MenuItem_Click_2"/>
-                <MenuItem Header="Actualizar" Click="MenuItem_Click_3"/>
+                <MenuItem Header="Agregar" Click="MenuAgregar_Click" Name="MenuAgregar"/>
+                <MenuItem Header="Eliminar" Click="MenuEliminarClick" Name="MenuEliminar"/>
+                <MenuItem Header="Actualizar" Click="MenuActualizarClick" Name="MenuActualizar"/>
+                <MenuItem Header="Consulta" Click="MenuConsulta_Click" Name="MenuConsulta"/>
             </MenuItem>
         </Menu>
 

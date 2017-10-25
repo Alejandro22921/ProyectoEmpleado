@@ -33,25 +33,31 @@ namespace ProyectoEmpleado
             InitializeComponent();
             empresa = new Empresa("Tenaris Tamsa S.A. de C.V.");
         }
-
+        
+        //menu items metodos
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
             Close();
         }
 
-        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
+        private void MenuAgregar_Click(object sender, RoutedEventArgs e)
         {
             (new wAltaEmpleado()).ShowDialog();
         }
 
-        private void MenuItem_Click_2(object sender, RoutedEventArgs e)
+        private void MenuEliminarClick(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private void MenuActualizarClick(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void MenuItem_Click_3(object sender, RoutedEventArgs e)
+        private void MenuConsulta_Click(object sender, RoutedEventArgs e)
         {
-
+            (new wConsultaEmpleado()).ShowDialog();
         }
 
         private void Grid_Loaded(object sender, RoutedEventArgs e)
@@ -62,5 +68,8 @@ namespace ProyectoEmpleado
         {
 
         }
+
+
+        
     }
 }

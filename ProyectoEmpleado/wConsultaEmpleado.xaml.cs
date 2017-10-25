@@ -23,8 +23,30 @@ namespace ProyectoEmpleado
         {
             InitializeComponent();
         }
+        //Metodos de componentes
+        //busqueda con enter txt
+        private void txtEmpleadoBuscar_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Return)
+            {
+                Consulta();
+            }
+        }
 
+        //busqueda por boton
         private void btnBuscarEmpleado_Click(object sender, RoutedEventArgs e)
+        {
+            Consulta();
+        }
+
+        //boton aceptar, salida de ventana
+        private void btnAceptarConsulta_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+        
+        public void Consulta()
         {
             try
             {
@@ -41,9 +63,7 @@ namespace ProyectoEmpleado
             }
         }
 
-        private void txtAceptarConsulta_Click(object sender, RoutedEventArgs e)
-        {
-            Close();
-        }
+        
+
     }
 }
