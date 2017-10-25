@@ -25,7 +25,7 @@ namespace ProyectoEmpleado
         }
         //Metodos de componentes
         //busqueda con enter txt
-        private void txtEmpleadoBuscar_KeyDown(object sender, KeyEventArgs e)
+        private void txtEmpleado_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Return)
             {
@@ -62,8 +62,6 @@ namespace ProyectoEmpleado
                 MessageBox.Show("Empleado no encontrado");
             }
         }
-
-        
 
     }
 }
