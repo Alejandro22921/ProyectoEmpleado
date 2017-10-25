@@ -16,7 +16,7 @@
         <Label Content="Salario" HorizontalAlignment="Left" Margin="64,244,0,0" VerticalAlignment="Top"/>
         <TextBlock x:Name="txtSalario" HorizontalAlignment="Left" Margin="142,249,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="21" Width="273"/>
         <Button x:Name="btnAceptarConsulta" Content="Aceptar" HorizontalAlignment="Left" Margin="340,275,0,0" VerticalAlignment="Top" Width="75" Click="btnAceptarConsulta_Click"/>
-        <TextBox x:Name="txtEmpleado" HorizontalAlignment="Left" Height="22" Margin="142,34,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="227" KeyDown="txtEmpleado_KeyDown"/>
+        <TextBox x:Name="txtEmpleado" HorizontalAlignment="Left" Height="22" Margin="142,34,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="227" KeyDown="txtEmpleado_KeyDown"/>
 
     </Grid>
 </Window>

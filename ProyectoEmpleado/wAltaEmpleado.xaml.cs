@@ -19,6 +19,7 @@ namespace ProyectoEmpleado
     /// </summary>
     public partial class wAltaEmpleado : Window
     {
+        Empleado empleado;
         public wAltaEmpleado()
         {
             InitializeComponent();
@@ -27,30 +28,34 @@ namespace ProyectoEmpleado
         private void btnAñadir_Click(object sender, RoutedEventArgs e)
         {
             DatosPersonales datos = new DatosPersonales(txtNombre.Text, txtDireccion.Text, txtEmail.Text, txtTelefono.Text);
-            Empleado empleado = null;
+            empleado = null;
 
             if(rbtn1.IsChecked == true) //Empleado base.
             {
                 double salario = Convert.ToDouble(txtBase_Base.Text);
                 empleado = new EmpleadoBase(datos, salario);
             }
-            else if (rbtn2.IsChecked == true) //Empleado jornada.
+
+            if (rbtn2.IsChecked == true) //Empleado jornada.
             {
                 int dias = Convert.ToInt32(txtSalario_Jornada.Text);
                 double salarioXDia = Convert.ToDouble(txtDias_Jornada.Text);
                 empleado = new EmpleadoJornada(datos, dias, salarioXDia);
             }
-            else
-            { //Empleado sindicalizado.
+
+            if (rbtn3.IsChecked == true) //Empleado sindicalizado.
+            { 
                 double salarioBase = Convert.ToDouble(txtSalario_Sindicalizado.Text);
                 int horasExtras = Convert.ToInt32(txtHoras_Sindicalizado.Text);
                 double salarioXHoraExtra = Convert.ToDouble(txtSalarioExtra_Sindicalizado.Text);
                 empleado = new EmpleadoSindicalizado(datos, salarioBase, horasExtras, salarioXHoraExtra);
             }
 
-
             if (empleado != null)
+            {
                 MainWindow.lista.Add(empleado);
+                Close();
+            }
         }
 
         private void rbtn1_Click(object sender, RoutedEventArgs e)

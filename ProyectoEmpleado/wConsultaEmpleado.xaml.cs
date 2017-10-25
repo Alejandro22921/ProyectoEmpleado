@@ -47,10 +47,11 @@ namespace ProyectoEmpleado
 
         
         public void Consulta()
-        {
+            {
             try
             {
-                Empleado empleado = MainWindow.lista.Find(x => x.Datos.Nombre == txtNombre.Text);
+                string busqueda = txtEmpleado.Text;
+                Empleado empleado = MainWindow.lista.Find(x => x.Datos.Nombre == busqueda);
                 txtNombre.Text = Convert.ToString(empleado.Datos.Nombre);
                 txtDireccion.Text = Convert.ToString(empleado.Datos.Direccion);
                 txtEmail.Text = Convert.ToString(empleado.Datos.Email);

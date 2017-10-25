@@ -21,17 +21,13 @@ namespace ProyectoEmpleado
     public partial class MainWindow : Window
     {
         public static List<Empleado> lista;
-        public List<Empleado> Lista
-        {
-            get { return lista; }
-            set { lista = value; }
-        }
+   
         Empresa empresa;
-
         public MainWindow()
         {
             InitializeComponent();
             empresa = new Empresa("Tenaris Tamsa S.A. de C.V.");
+            lista = new List<Empleado>();
         }
         
         //menu items metodos
@@ -52,7 +48,7 @@ namespace ProyectoEmpleado
 
         private void MenuActualizarClick(object sender, RoutedEventArgs e)
         {
-
+            (new wActualizar()).ShowDialog();
         }
 
         private void MenuConsulta_Click(object sender, RoutedEventArgs e)
