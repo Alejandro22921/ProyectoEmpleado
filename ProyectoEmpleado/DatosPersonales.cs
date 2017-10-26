@@ -37,12 +37,20 @@ namespace ProyectoEmpleado
             set { telefono = value; }
         }
 
-        public DatosPersonales(string nombre, string direccion, string email, string telefono)
+        protected string fotografia;
+        public string Fotografia
+        {
+            get { return fotografia; }
+            set { fotografia = value; }
+        }
+
+        public DatosPersonales(string nombre, string direccion, string email, string telefono, string fotografia)
         {
             this.nombre = nombre;
             this.direccion = direccion;
             this.email = email;
             this.telefono = telefono;
+            this.fotografia = fotografia;
         }
     }
 }

@@ -127,9 +127,17 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="usuario.png" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="sources\IVINlogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="sources\usuario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="sources\usuarioAñadir.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

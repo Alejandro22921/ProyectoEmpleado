@@ -24,24 +24,24 @@ namespace ProyectoEmpleado
             InitializeComponent();
         }
 
-        private void btnEliminar_Click(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-            string eliminarEmpleado = txtNombre.Text;
-            Empleado empleado = MainWindow.lista.Find(item => item.Datos.Nombre == eliminarEmpleado);
+            Empleado empleado = MainWindow.lista.Find(x => x.Datos.Nombre == txtNombre.Text);
             if (empleado != null)
             {
                 MessageBoxResult result = MessageBox.Show("¿Desea Eliminar El Empleado Seleccionado?", "Confirmación", MessageBoxButton.YesNo);
                 if (result == MessageBoxResult.Yes)
                 {
                     MainWindow.lista.Remove(empleado);
-                }              
+                    txtNombre.Text = "";
+                }
             }
             else
             {
                 MessageBox.Show("No se ha encontrado el empleado :(");
             }
         }
-        }
     }
+}
 
 

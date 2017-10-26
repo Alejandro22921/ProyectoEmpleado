@@ -19,15 +19,27 @@ namespace ProyectoEmpleado
     /// </summary>
     public partial class wAltaEmpleado : Window
     {
-        
+        string nombreImagen = "";
         public wAltaEmpleado()
         {
             InitializeComponent();
+
         }
 
         private void btnAñadir_Click(object sender, RoutedEventArgs e)
         {
-            DatosPersonales datos = new DatosPersonales(txtNombre.Text, txtDireccion.Text, txtEmail.Text, txtTelefono.Text);
+            DatosPersonales datos;
+            if (nombreImagen == "")
+            {
+                Uri nombre = new Uri("/ProyectoEmpleado;component/sources/usuarioAñadir.png", UriKind.Relative);
+                datos = new DatosPersonales(txtNombre.Text, txtDireccion.Text, txtEmail.Text, txtTelefono.Text, nombre.ToString());
+            }
+            else
+            {
+                datos = new DatosPersonales(txtNombre.Text, txtDireccion.Text, txtEmail.Text, txtTelefono.Text, nombreImagen);
+            }
+
+            nombreImagen = "";
             Empleado empleado = null;
 
             try { 
@@ -55,7 +67,17 @@ namespace ProyectoEmpleado
             if (empleado != null)
             {
                 MainWindow.lista.Add(empleado);
-                Close();
+                MessageBox.Show("Empleado Añadido Exitosamente :)");
+                txtNombre.Text = "";
+                txtDireccion.Text = "";
+                txtEmail.Text = "";
+                txtTelefono.Text = "";
+                txtBase_Base.Text = "";
+                txtDias_Jornada.Text = "";
+                txtSalario_Jornada.Text = "";
+                txtHoras_Sindicalizado.Text = "";
+                txtSalario_Sindicalizado.Text = "";
+                txtSalarioExtra_Sindicalizado.Text = "";
             }
             
             }catch(Exception){
@@ -85,6 +107,29 @@ namespace ProyectoEmpleado
             blockJornada.Visibility = System.Windows.Visibility.Hidden;
             blockSindicalizado.Visibility = System.Windows.Visibility.Visible;
             wAltaEmpleado1.Height = 375;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            nombreImagen = "";
+            Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
+
+            dlg.Filter = "JPG Files (*.jpg)|*.jpg|PNG Files (*.png)|*.png|JPEG FIles (*.jpeg)|*.jpeg|GIF Files (*.gif)|*.gif";
+            dlg.DefaultExt = ".jpg";
+            Nullable<bool> result = dlg.ShowDialog();
+
+            if (result == true)
+            {
+                nombreImagen = dlg.FileName;
+                BitmapImage logo = new BitmapImage();
+                logo.BeginInit();
+                if (nombreImagen != "")
+                {
+                    logo.UriSource = new Uri(nombreImagen);
+                    logo.EndInit();
+                    imagenEmpleado.Source = logo;
+                }
+            }
         }
     }
 }
