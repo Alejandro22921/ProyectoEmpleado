@@ -41,21 +41,7 @@ namespace ProyectoEmpleado
             Console.ReadKey();
         }
 
-        public void Eliminar()
-        {
-            Console.Clear();
-            Console.Write("<---------------Dar de Baja Empleado--------------->\nNombre: ");
-            string eliminarEmpleado = Convert.ToString(Console.ReadLine());
-
-            Empleado empleado = lista.Find(item => item.Datos.Nombre == eliminarEmpleado);
-            if (empleado != null)
-                lista.Remove(empleado);
-            else
-            {
-                Console.WriteLine("\nEmpleado No Encontrado :(\nPresione una tecla para continuar...");
-                Console.ReadKey();
-            }
-        }
+        
 
         public void Update()
         {

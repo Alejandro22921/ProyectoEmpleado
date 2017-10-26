@@ -19,7 +19,7 @@ namespace ProyectoEmpleado
     /// </summary>
     public partial class wAltaEmpleado : Window
     {
-        Empleado empleado;
+        
         public wAltaEmpleado()
         {
             InitializeComponent();
@@ -28,8 +28,9 @@ namespace ProyectoEmpleado
         private void btnAñadir_Click(object sender, RoutedEventArgs e)
         {
             DatosPersonales datos = new DatosPersonales(txtNombre.Text, txtDireccion.Text, txtEmail.Text, txtTelefono.Text);
-            empleado = null;
+            Empleado empleado = null;
 
+            try { 
             if(rbtn1.IsChecked == true) //Empleado base.
             {
                 double salario = Convert.ToDouble(txtBase_Base.Text);
@@ -55,6 +56,10 @@ namespace ProyectoEmpleado
             {
                 MainWindow.lista.Add(empleado);
                 Close();
+            }
+            
+            }catch(Exception){
+                MessageBox.Show("Datos Inválidos.");
             }
         }
 
