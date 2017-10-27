@@ -90,7 +90,7 @@ namespace ProyectoEmpleado
             blockBase.Visibility = System.Windows.Visibility.Visible;
             blockJornada.Visibility = System.Windows.Visibility.Hidden;
             blockSindicalizado.Visibility = System.Windows.Visibility.Hidden;
-            wAltaEmpleado1.Height = 305;
+            wAltaEmpleado1.Height = 385.75;
         }
 
         private void rbtn2_Click(object sender, RoutedEventArgs e)
@@ -98,7 +98,7 @@ namespace ProyectoEmpleado
             blockBase.Visibility = System.Windows.Visibility.Hidden;
             blockJornada.Visibility = System.Windows.Visibility.Visible;
             blockSindicalizado.Visibility = System.Windows.Visibility.Hidden;
-            wAltaEmpleado1.Height = 340;
+            wAltaEmpleado1.Height = 415.75;
         }
 
         private void rbtn3_Click(object sender, RoutedEventArgs e)
@@ -106,7 +106,7 @@ namespace ProyectoEmpleado
             blockBase.Visibility = System.Windows.Visibility.Hidden;
             blockJornada.Visibility = System.Windows.Visibility.Hidden;
             blockSindicalizado.Visibility = System.Windows.Visibility.Visible;
-            wAltaEmpleado1.Height = 375;
+            wAltaEmpleado1.Height = 450.75;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
