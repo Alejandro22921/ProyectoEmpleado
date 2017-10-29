@@ -19,7 +19,12 @@ namespace ProyectoEmpleado
     /// </summary>
     public partial class wAltaEmpleado : Window
     {
-        string nombreImagen = "";
+        private string nombreImagen = "";
+        public string NombreImagen
+        {
+            get { return nombreImagen; }
+            set { nombreImagen = value; }
+        }
         public wAltaEmpleado()
         {
             InitializeComponent();
@@ -78,6 +83,12 @@ namespace ProyectoEmpleado
                 txtHoras_Sindicalizado.Text = "";
                 txtSalario_Sindicalizado.Text = "";
                 txtSalarioExtra_Sindicalizado.Text = "";
+
+                BitmapImage imagen = new BitmapImage();
+                imagen.BeginInit();
+                imagen.UriSource = new Uri("/ProyectoEmpleado;component/sources/usuarioAñadir.png", UriKind.RelativeOrAbsolute);
+                imagen.EndInit();
+                imagenEmpleado.Source = imagen;
             }
             
             }catch(Exception){
