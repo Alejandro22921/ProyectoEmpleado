@@ -48,7 +48,7 @@ namespace ProyectoEmpleado
 
         private void MenuActualizarClick(object sender, RoutedEventArgs e)
         {
-            (new wActualizar()).ShowDialog();
+            (new wActualizar()).ShowDialog();   
         }
 
         private void MenuConsulta_Click(object sender, RoutedEventArgs e)

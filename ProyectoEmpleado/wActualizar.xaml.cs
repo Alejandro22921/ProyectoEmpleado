@@ -23,5 +23,13 @@ namespace ProyectoEmpleado
         {
             InitializeComponent();
         }
+
+        private void btnBuscarActualziar_Click(object sender, RoutedEventArgs e)
+        {
+            Empleado empleado = MainWindow.lista.Find(s => s.Datos.Nombre == txtEmpleadoBusqueda.Text);
+            txtNombre.Text = empleado.Datos.Nombre;
+            txtDireccion.Text = empleado.Datos.Direccion;
+
+        }
     }
 }

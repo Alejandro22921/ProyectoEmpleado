@@ -5,7 +5,7 @@
     <Grid>
         <Label Content="Empleado" HorizontalAlignment="Left" Margin="62,53,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="txtEmpleadoBusqueda" HorizontalAlignment="Left" Height="23" Margin="142,56,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="324"/>
-        <Button Name="btnBuscarActualziar" Content="Buscar" HorizontalAlignment="Left" Margin="516,56,0,0" VerticalAlignment="Top" Width="75" Height="23"/>
+        <Button Name="btnBuscarActualziar" Content="Buscar" HorizontalAlignment="Left" Margin="516,56,0,0" VerticalAlignment="Top" Width="75" Height="23" Click="btnBuscarActualziar_Click"/>
         <Label Content="Nombre" HorizontalAlignment="Left" Margin="72,130,0,0" VerticalAlignment="Top"/>
         <Label Content="Telefono" HorizontalAlignment="Left" Margin="71,161,0,0" VerticalAlignment="Top"/>
         <Label Content="Email" HorizontalAlignment="Left" Margin="71,192,0,0" VerticalAlignment="Top"/>
