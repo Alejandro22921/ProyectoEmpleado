@@ -43,7 +43,7 @@ namespace ProyectoEmpleado
 
         private void MenuEliminarClick(object sender, RoutedEventArgs e)
         {
-            
+            (new wEliminar()).ShowDialog();
         }
 
         private void MenuActualizarClick(object sender, RoutedEventArgs e)
@@ -54,10 +54,6 @@ namespace ProyectoEmpleado
         private void MenuConsulta_Click(object sender, RoutedEventArgs e)
         {
             (new wConsultaEmpleado()).ShowDialog();
-        }
-
-        private void Grid_Loaded(object sender, RoutedEventArgs e)
-        {
         }
 
         private void MenuItem_Click_4(object sender, RoutedEventArgs e)

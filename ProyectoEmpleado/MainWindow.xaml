@@ -1,8 +1,8 @@
 ﻿<Window x:Class="ProyectoEmpleado.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="350" Width="525" Icon="sources/IVINlogo.png">
-    <Grid Loaded="Grid_Loaded">
+        Title="MainWindow" Height="350" Width="525" Icon="sources/IVINlogo.png" ResizeMode="NoResize">
+    <Grid>
         <Menu HorizontalAlignment="Left" Height="22" VerticalAlignment="Top" Width="517">
             <MenuItem Header="Archivo" Click="MenuItem_Click_4">
                 <MenuItem Header="Salir" Click="MenuItem_Click"/>
