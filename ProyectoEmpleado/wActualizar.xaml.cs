@@ -20,6 +20,7 @@ namespace ProyectoEmpleado
     public partial class wActualizar : Window
     {
         Empleado empleado;
+
         public wActualizar()
         {
             InitializeComponent();
@@ -42,6 +43,60 @@ namespace ProyectoEmpleado
         {
             Close();
         }
+        private void btnCambiarImagen_Click(object sender, RoutedEventArgs e)
+        {
+            string nombreImagen = "";
+            Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
+
+            dlg.Filter = "JPG Files (*.jpg)|*.jpg|PNG Files (*.png)|*.png|JPEG FIles (*.jpeg)|*.jpeg|GIF Files (*.gif)|*.gif";
+            dlg.DefaultExt = ".jpg";
+            Nullable<bool> result = dlg.ShowDialog();
+
+            if (result == true)
+            {
+                nombreImagen = dlg.FileName;
+                BitmapImage logo = new BitmapImage();
+                logo.BeginInit();
+                if (nombreImagen != "")
+                {
+                    logo.UriSource = new Uri(nombreImagen);
+                    logo.EndInit();
+                    imgEmpleadoActualizar.Source = logo;
+                }
+            }
+        }
+
+        private void btnActualizar_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                if (empleado.Datos.Nombre != "")
+                {
+                    switch (empleado.GetType().ToString())
+                    {
+                        case "ProyectoEmpleado.EmpleadoBase":
+                            SetDatosDesdeTextBox();
+                            ((EmpleadoBase)empleado).SalarioBase = Convert.ToDouble(txtSalarioEmpleadoBase.Text);
+                            break;
+                        case "ProyectoEmpleado.EmpleadoJornada":
+                            SetDatosDesdeTextBox();
+                            ((EmpleadoJornada)empleado).NumeroDias = Convert.ToInt16(txtDias.Text);
+                            ((EmpleadoJornada)empleado).SalarioXDia = Convert.ToDouble(txtPagoDia.Text);
+                            break;
+                        case "ProyectoEmpleado.EmpleadoSindicalizado":
+                            SetDatosDesdeTextBox();
+                            ((EmpleadoSindicalizado)empleado).SalarioBase = Convert.ToDouble(txtSalarioSindicalizadoBase.Text);
+                            ((EmpleadoSindicalizado)empleado).HorasExtra = Convert.ToInt16(txtHoras.Text);
+                            ((EmpleadoSindicalizado)empleado).SalarioXHoraExtra = Convert.ToDouble(txtPagoHoras.Text);
+                            break;
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error");
+            }
+        }
 
         public void BusquedaYLlenado()
         {
@@ -52,6 +107,13 @@ namespace ProyectoEmpleado
                 txtDireccion.Text = empleado.Datos.Direccion;
                 txtEmail.Text = empleado.Datos.Email;
                 txtTelefono.Text = empleado.Datos.Telefono.ToString();
+
+                BitmapImage imagen = new BitmapImage();
+                imagen.BeginInit();
+                imagen.UriSource = new Uri(empleado.Datos.Fotografia, UriKind.RelativeOrAbsolute);
+                imagen.EndInit();
+                imgEmpleadoActualizar.Source = imagen;
+
                 switch (empleado.GetType().ToString())
                 {
                     case "ProyectoEmpleado.EmpleadoBase":
@@ -78,38 +140,24 @@ namespace ProyectoEmpleado
                     default:
                         //MessageBox.Show("uy no");
                         break;
-                } 
+                }
             }
-            catch(Exception)
+            catch (Exception)
             {
                 MessageBox.Show("Empleado no Encontrado");
             }
 
         }
 
-        private void btnActualizar_Click(object sender, RoutedEventArgs e)
+        private void SetDatosDesdeTextBox()
         {
-            if (empleado.Datos.Nombre!="")
-            {
-                switch (empleado.GetType().ToString())
-                {
-                    case "ProyectoEmpleado.EmpleadoBase":
-                        ((EmpleadoBase)empleado).Datos.Nombre="";
-                        ((EmpleadoBase)empleado).Datos.Direccion = "";
-                        ((EmpleadoBase)empleado).Datos.Email = "";
-                        ((EmpleadoBase)empleado).Datos.Telefono = "";
-                        ((EmpleadoBase)empleado).Datos.Fotografia = "";
-                        break;
-                    case "ProyectoEmpleado.EmpleadoJornada":
-                        break;
-                    case "ProyectoEmpleado.EmpleadoSindicalizado":
-                        break;
-                }
-            }
+            empleado.Datos.Nombre = txtNombre.Text;
+            empleado.Datos.Direccion = txtDireccion.Text;
+            empleado.Datos.Email = txtEmail.Text;
+            empleado.Datos.Telefono = txtTelefono.Text;
+            empleado.Datos.Fotografia = imgEmpleadoActualizar.Source.ToString();
         }
-
-        
-
 
     }
 }
+ 

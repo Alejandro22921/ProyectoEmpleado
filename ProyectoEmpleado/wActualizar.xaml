@@ -4,7 +4,7 @@
         Title="wActualizar" Height="416" Width="659">
     <Grid>
         <Label Content="Empleado" HorizontalAlignment="Left" Margin="63,53,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtEmpleadoBusqueda" HorizontalAlignment="Left" Height="23" Margin="142,56,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="324"/>
+        <TextBox x:Name="txtEmpleadoBusqueda" HorizontalAlignment="Left" Height="23" Margin="142,56,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="324" KeyDown="txtEmpleadoBusqueda_KeyDown"/>
         <Button Name="btnBuscarActualziar" Content="Buscar" HorizontalAlignment="Left" Margin="516,56,0,0" VerticalAlignment="Top" Width="75" Height="23" Click="btnBuscarActualziar_Click"/>
         <Label Content="Nombre" HorizontalAlignment="Left" Margin="63,130,0,0" VerticalAlignment="Top"/>
         <Label Content="Telefono" HorizontalAlignment="Left" Margin="63,161,0,0" VerticalAlignment="Top"/>
@@ -16,11 +16,11 @@
         <TextBox x:Name="txtDireccion" HorizontalAlignment="Left" Height="23" Margin="142,226,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="238"/>
         <Label Content="Foto" HorizontalAlignment="Left" Margin="405,116,0,0" VerticalAlignment="Top"/>
         <Image  Name="imgEmpleadoActualizar" HorizontalAlignment="Left" Height="133" Margin="453,116,0,0" VerticalAlignment="Top" Width="138"/>
-        <Label Content="Categoría" HorizontalAlignment="Left" Margin="405,262,0,0" VerticalAlignment="Top"/>
-        <ComboBox Name="cmbCategoriaActualizar" HorizontalAlignment="Left" Margin="471,266,0,0" VerticalAlignment="Top" Width="120"/>
-        <Button Name="btnActualizar" Content="Actualizar" HorizontalAlignment="Left" Height="28" Margin="393,337,0,0" VerticalAlignment="Top" Width="87" Background="#FFDDDDDD"/>
-        <Button Name="btnCancelar" Content="Cancelar" HorizontalAlignment="Left" Height="28" Margin="523,337,0,0" VerticalAlignment="Top" Width="87" Background="#FFFDF5F5" BorderBrush="#FFA09E9E"/>
-        
+        <Label Content="Categoría" HorizontalAlignment="Left" Margin="405,275,0,0" VerticalAlignment="Top"/>
+        <ComboBox Name="cmbCategoriaActualizar" HorizontalAlignment="Left" Margin="471,279,0,0" VerticalAlignment="Top" Width="120"/>
+        <Button Name="btnActualizar" Content="Actualizar" HorizontalAlignment="Left" Height="28" Margin="393,337,0,0" VerticalAlignment="Top" Width="87" Background="#FFDDDDDD" Click="btnActualizar_Click"/>
+        <Button Name="btnCancelar" Content="Cancelar" HorizontalAlignment="Left" Height="28" Margin="523,337,0,0" VerticalAlignment="Top" Width="87" Background="#FFFDF5F5" BorderBrush="#FFA09E9E" Click="btnCancelar_Click"/>
+
         <Grid x:Name="gridEmpleadoBase" HorizontalAlignment="Left" Height="78" Margin="63,254,0,0" VerticalAlignment="Top" Width="337" Visibility="Hidden">
             <Label Content="Salario Base" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.132,0.692" Margin="0,3,0,0"/>
             <TextBox Name="txtSalarioEmpleadoBase" HorizontalAlignment="Left" Height="25" Margin="78,4,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="229"/>
@@ -39,6 +39,7 @@
             <TextBox x:Name="txtDias" HorizontalAlignment="Left" Height="23" Margin="93,3,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="222"/>
             <TextBox x:Name="txtPagoDia" HorizontalAlignment="Left" Height="23" Margin="93,35,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="222"/>
         </Grid>
+        <Button x:Name="btnCambiarImagen" Content="Cambiar Imagen" HorizontalAlignment="Left" Height="21" Margin="453,249,0,0" VerticalAlignment="Top" Width="138" Click="btnCambiarImagen_Click"/>
 
 
     </Grid>
