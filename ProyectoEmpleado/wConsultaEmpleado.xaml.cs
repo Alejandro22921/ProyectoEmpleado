@@ -57,6 +57,43 @@ namespace ProyectoEmpleado
                 txtEmail.Text = Convert.ToString(empleado.Datos.Email);
                 txtTelefono.Text = Convert.ToString(empleado.Datos.Telefono);
                 txtSalario.Text = Convert.ToString("$" + empleado.Salario());
+                
+                BitmapImage imagen = new BitmapImage();
+                imagen.BeginInit();
+                imagen.UriSource=new Uri(empleado.Datos.Fotografia, UriKind.RelativeOrAbsolute);
+                imagen.EndInit();
+                imagenPersona.Source = imagen;
+                if (empleado.GetType().ToString() == "ProyectoEmpleado.EmpleadoBase")
+                {
+                    gridSindicalizado.Visibility = System.Windows.Visibility.Hidden;
+                    gridSindicalizado.Visibility = System.Windows.Visibility.Hidden;
+                }
+                if (empleado.GetType().ToString() == "ProyectoEmpleado.EmpleadoJornada")
+                {
+                    gridSindicalizado.Visibility = System.Windows.Visibility.Hidden;
+                    gridJornada.Visibility = System.Windows.Visibility.Visible;
+                    txtDiaLaborado.Text = ((EmpleadoJornada)empleado).NumeroDias.ToString();
+                    txtSalarioDia.Text = ((EmpleadoJornada)empleado).SalarioXDia.ToString();
+                }
+                if (empleado.GetType().ToString() == "ProyectoEmpleado.EmpleadoSindicalizado")
+                {
+                    gridSindicalizado.Visibility = System.Windows.Visibility.Visible;
+                    gridJornada.Visibility = System.Windows.Visibility.Hidden;
+                    txtHoraExtra.Text = ((EmpleadoSindicalizado)empleado).HorasExtra.ToString();
+                    txtPrecioPorHora.Text = ((EmpleadoSindicalizado)empleado).SalarioXHoraExtra.ToString();
+
+                }
+
+                /*if (estado.NombreImagen=="")
+                {
+                    imagen.UriSource = new Uri("/ProyectoEstados;component/Resources/nodisponible.png", UriKind.RelativeOrAbsolute);
+                }
+                else
+                {
+                    imagen.UriSource = new Uri(estado.NombreImagen, UriKind.RelativeOrAbsolute);
+                }
+                  
+                 */
             }
             catch (Exception)
             {
