@@ -90,6 +90,7 @@ namespace ProyectoEmpleado
                             ((EmpleadoSindicalizado)empleado).SalarioXHoraExtra = Convert.ToDouble(txtPagoHoras.Text);
                             break;
                     }
+                    LimpiaTxt();
                 }
             }
             catch (Exception)
@@ -158,6 +159,24 @@ namespace ProyectoEmpleado
             empleado.Datos.Fotografia = imgEmpleadoActualizar.Source.ToString();
         }
 
+        public void LimpiaTxt()
+        {
+            txtNombre.Text = "";
+            txtHoras.Text = "";
+            txtDireccion.Text = "";
+            txtDias.Text = "";
+            txtEmail.Text = "";
+            txtPagoDia.Text = "";
+            txtPagoHoras.Text = "";
+            txtSalarioEmpleadoBase.Text = "";
+            txtSalarioSindicalizadoBase.Text = "";
+            txtTelefono.Text = "";
+            BitmapImage imagen = new BitmapImage();
+            imagen.BeginInit();
+            imagen.UriSource = new Uri("/ProyectoEmpleado;component/sources/usuarioAñadir.png", UriKind.RelativeOrAbsolute);
+            imagen.EndInit();
+            imgEmpleadoActualizar.Source = imagen;
+        }
     }
 }
  

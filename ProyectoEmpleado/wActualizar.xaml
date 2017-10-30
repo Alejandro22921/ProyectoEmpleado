@@ -15,9 +15,7 @@
         <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="23" Margin="142,195,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="238"/>
         <TextBox x:Name="txtDireccion" HorizontalAlignment="Left" Height="23" Margin="142,226,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="238"/>
         <Label Content="Foto" HorizontalAlignment="Left" Margin="405,116,0,0" VerticalAlignment="Top"/>
-        <Image  Name="imgEmpleadoActualizar" HorizontalAlignment="Left" Height="133" Margin="453,116,0,0" VerticalAlignment="Top" Width="138"/>
-        <Label Content="Categoría" HorizontalAlignment="Left" Margin="405,275,0,0" VerticalAlignment="Top"/>
-        <ComboBox Name="cmbCategoriaActualizar" HorizontalAlignment="Left" Margin="471,279,0,0" VerticalAlignment="Top" Width="120"/>
+        <Image  Name="imgEmpleadoActualizar" HorizontalAlignment="Left" Height="133" Margin="453,116,0,0" VerticalAlignment="Top" Width="138" Source="usuario.png"/>
         <Button Name="btnActualizar" Content="Actualizar" HorizontalAlignment="Left" Height="28" Margin="393,337,0,0" VerticalAlignment="Top" Width="87" Background="#FFDDDDDD" Click="btnActualizar_Click"/>
         <Button Name="btnCancelar" Content="Cancelar" HorizontalAlignment="Left" Height="28" Margin="523,337,0,0" VerticalAlignment="Top" Width="87" Background="#FFFDF5F5" BorderBrush="#FFA09E9E" Click="btnCancelar_Click"/>
 
