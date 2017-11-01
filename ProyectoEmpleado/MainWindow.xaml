@@ -13,6 +13,9 @@
                 <MenuItem Header="Actualizar" Click="MenuActualizarClick" Name="MenuActualizar"/>
                 <MenuItem Header="Consulta" Click="MenuConsulta_Click" Name="MenuConsulta"/>
             </MenuItem>
+            <MenuItem Header="Empresa">
+                <MenuItem Header="Lista" Click="MenuItem_Click_1"/>
+            </MenuItem>
         </Menu>
         <Image HorizontalAlignment="Left" Height="282" Margin="128,37,0,0" VerticalAlignment="Top" Width="389" Source="sources/IVINlogo.png" StretchDirection="DownOnly"/>
 

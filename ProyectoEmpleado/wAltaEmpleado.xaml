@@ -2,16 +2,9 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Name="wAltaEmpleado1" x:Class="ProyectoEmpleado.wAltaEmpleado"
-        Title="Agregar Empleado" Height="385.75" Width="643.366" ResizeMode="NoResize" Icon="sources/IVINlogo.png">
+        Title="Agregar Empleado" Height="385.75" Width="643.366" ResizeMode="NoResize" Icon="sources/IVINlogo.png" Loaded="wAltaEmpleado1_Loaded">
     <Grid Margin="0,0,2,-19">
         <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="210" Margin="435,29,0,0" Stroke="Black" VerticalAlignment="Top" Width="169"/>
-        <GroupBox Header="Categoria Empleado" HorizontalAlignment="Left" Margin="32,200,0,0" VerticalAlignment="Top" Height="70" Width="371">
-            <Grid HorizontalAlignment="Left" Height="51" Margin="10,10,-2,-12" VerticalAlignment="Top" Width="351">
-                <RadioButton x:Name="rbtn1" Content="Base" HorizontalAlignment="Left" Margin="18,10,0,0" VerticalAlignment="Top" FontSize="16" IsChecked="True" Click="rbtn1_Click"/>
-                <RadioButton x:Name="rbtn2" Content="Jornada" HorizontalAlignment="Left" Margin="106,10,0,0" VerticalAlignment="Top" FontSize="16" Click="rbtn2_Click"/>
-                <RadioButton x:Name="rbtn3" Content="Sindicalizado" HorizontalAlignment="Left" Margin="217,10,0,0" VerticalAlignment="Top" FontSize="16" Click="rbtn3_Click"/>
-            </Grid>
-        </GroupBox>
         <Label Content="Nombre:" HorizontalAlignment="Left" Margin="32,24,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
         <Label Content="" HorizontalAlignment="Left" Margin="78,64,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
         <Label Content="Dirección:" HorizontalAlignment="Left" Margin="32,64,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
@@ -43,6 +36,8 @@
         <Label Content="Fotografía" HorizontalAlignment="Left" Margin="440,30,0,0" VerticalAlignment="Top" FontSize="16"/>
         <Image x:Name="imagenEmpleado" HorizontalAlignment="Left" Height="131" Margin="459,66,0,0" VerticalAlignment="Top" Width="120" Source="sources/usuarioAñadir.png" RenderTransformOrigin="0.319,0.489"/>
         <Button Content="Cambiar imágen" HorizontalAlignment="Left" Margin="470,206,0,0" Width="100" Opacity="0.995" FontStyle="Italic" FontWeight="Thin" VerticalAlignment="Top" TextOptions.TextFormattingMode="Display" Click="Button_Click"/>
+        <Label Content="Tipo Empleado:" HorizontalAlignment="Left" Margin="30,203,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
+        <ComboBox x:Name="cmbEmpleado" HorizontalAlignment="Left" Margin="180,203,0,0" VerticalAlignment="Top" Width="223" Height="28" SelectionChanged="cmbEmpleado_SelectionChanged"/>
 
     </Grid>
 </Window>

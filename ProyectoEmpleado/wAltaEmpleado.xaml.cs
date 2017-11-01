@@ -19,6 +19,7 @@ namespace ProyectoEmpleado
     /// </summary>
     public partial class wAltaEmpleado : Window
     {
+        List<string> empleadoList = new List<string> { "BASE", "JORNADA", "SINDICALIZADO" };
         private string nombreImagen = "";
         public string NombreImagen
         {
@@ -28,7 +29,6 @@ namespace ProyectoEmpleado
         public wAltaEmpleado()
         {
             InitializeComponent();
-
         }
 
         private void btnAñadir_Click(object sender, RoutedEventArgs e)
@@ -48,20 +48,18 @@ namespace ProyectoEmpleado
             Empleado empleado = null;
 
             try { 
-            if(rbtn1.IsChecked == true) //Empleado base.
+            if(cmbEmpleado.SelectedIndex == 0) //Empleado base.
             {
                 double salario = Convert.ToDouble(txtBase_Base.Text);
                 empleado = new EmpleadoBase(datos, salario);
-            }
 
-            if (rbtn2.IsChecked == true) //Empleado jornada.
+            } else if (cmbEmpleado.SelectedIndex == 1) //Empleado jornada.
             {
                 int dias = Convert.ToInt32(txtSalario_Jornada.Text);
                 double salarioXDia = Convert.ToDouble(txtDias_Jornada.Text);
                 empleado = new EmpleadoJornada(datos, dias, salarioXDia);
-            }
-
-            if (rbtn3.IsChecked == true) //Empleado sindicalizado.
+            } 
+            else
             { 
                 double salarioBase = Convert.ToDouble(txtSalario_Sindicalizado.Text);
                 int horasExtras = Convert.ToInt32(txtHoras_Sindicalizado.Text);
@@ -96,30 +94,6 @@ namespace ProyectoEmpleado
             }
         }
 
-        private void rbtn1_Click(object sender, RoutedEventArgs e)
-        {
-            blockBase.Visibility = System.Windows.Visibility.Visible;
-            blockJornada.Visibility = System.Windows.Visibility.Hidden;
-            blockSindicalizado.Visibility = System.Windows.Visibility.Hidden;
-            wAltaEmpleado1.Height = 385.75;
-        }
-
-        private void rbtn2_Click(object sender, RoutedEventArgs e)
-        {
-            blockBase.Visibility = System.Windows.Visibility.Hidden;
-            blockJornada.Visibility = System.Windows.Visibility.Visible;
-            blockSindicalizado.Visibility = System.Windows.Visibility.Hidden;
-            wAltaEmpleado1.Height = 415.75;
-        }
-
-        private void rbtn3_Click(object sender, RoutedEventArgs e)
-        {
-            blockBase.Visibility = System.Windows.Visibility.Hidden;
-            blockJornada.Visibility = System.Windows.Visibility.Hidden;
-            blockSindicalizado.Visibility = System.Windows.Visibility.Visible;
-            wAltaEmpleado1.Height = 450.75;
-        }
-
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             nombreImagen = "";
@@ -140,6 +114,37 @@ namespace ProyectoEmpleado
                     logo.EndInit();
                     imagenEmpleado.Source = logo;
                 }
+            }
+        }
+
+        private void wAltaEmpleado1_Loaded(object sender, RoutedEventArgs e)
+        {
+            cmbEmpleado.ItemsSource = empleadoList;
+            cmbEmpleado.SelectedIndex = 0;
+        }
+
+        private void cmbEmpleado_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (cmbEmpleado.SelectedIndex == 0)
+            {
+                blockBase.Visibility = System.Windows.Visibility.Visible;
+                blockJornada.Visibility = System.Windows.Visibility.Hidden;
+                blockSindicalizado.Visibility = System.Windows.Visibility.Hidden;
+                wAltaEmpleado1.Height = 385.75;
+            }
+            else if (cmbEmpleado.SelectedIndex == 1)
+            {
+                blockBase.Visibility = System.Windows.Visibility.Hidden;
+                blockJornada.Visibility = System.Windows.Visibility.Visible;
+                blockSindicalizado.Visibility = System.Windows.Visibility.Hidden;
+                wAltaEmpleado1.Height = 415.75;
+            }
+            else
+            {
+                blockBase.Visibility = System.Windows.Visibility.Hidden;
+                blockJornada.Visibility = System.Windows.Visibility.Hidden;
+                blockSindicalizado.Visibility = System.Windows.Visibility.Visible;
+                wAltaEmpleado1.Height = 450.75;
             }
         }
     }

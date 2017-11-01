@@ -65,6 +65,9 @@
     <Compile Include="wEliminar.xaml.cs">
       <DependentUpon>wEliminar.xaml</DependentUpon>
     </Compile>
+    <Compile Include="wLista.xaml.cs">
+      <DependentUpon>wLista.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -96,6 +99,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="wEliminar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="wLista.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

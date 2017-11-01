@@ -1,0 +1,14 @@
+﻿<Window x:Name="wLista1" x:Class="ProyectoEmpleado.wLista"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Lista De Empleados" Height="391.045" Width="582.09" ShowInTaskbar="False" Loaded="wLista1_Loaded">
+    <Grid>
+        <Label Content="Empleados Registrados" HorizontalAlignment="Left" Margin="170,4,0,0" VerticalAlignment="Top" FontSize="24"/>
+        <TextBlock x:Name="textBlockLista" HorizontalAlignment="Left" Margin="10,104,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="554" Height="202"/>
+        <Label Content="Nombre" HorizontalAlignment="Left" Margin="10,73,0,0" VerticalAlignment="Top"/>
+        <Label Content="Teléfono" HorizontalAlignment="Left" Margin="84,73,0,0" VerticalAlignment="Top"/>
+        <Label Content="E-mail" HorizontalAlignment="Left" Margin="170,73,0,0" VerticalAlignment="Top"/>
+        <Label Content="Tipo" HorizontalAlignment="Left" Margin="263,73,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>
